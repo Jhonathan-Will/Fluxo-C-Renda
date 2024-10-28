@@ -1,23 +1,116 @@
-<?php
+<?php 
 require 'connect.php';
-session_start();
-if (!isset($_SESSION['usuName'])) {
-    header("Location: auth/login.php"); // Redireciona para o login se a sessão não estiver ativa
-    exit();
-}
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Inicio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
+
 <body>
-    <div class="container">
-        <form action="action/deslogar.php" method="POST">
-         <button type="submit" class="btn btn-danger">Logout</button>
-        </form>
+   
+    <div class=" align-items-center ">
+        <!-- Section: Design Block -->
+<section class="background-radial-gradient overflow-hidden">
+  <style>
+    .background-radial-gradient {
+      background-color: hsl(218, 41%, 15%);
+      background-image: radial-gradient(650px circle at 0% 0%,
+          hsl(218, 41%, 35%) 15%,
+          hsl(218, 41%, 30%) 35%,
+          hsl(218, 41%, 20%) 75%,
+          hsl(218, 41%, 19%) 80%,
+          transparent 100%),
+        radial-gradient(1250px circle at 100% 100%,
+          hsl(218, 41%, 45%) 15%,
+          hsl(218, 41%, 30%) 35%,
+          hsl(218, 41%, 20%) 75%,
+          hsl(218, 41%, 19%) 80%,
+          transparent 100%);
+    }
+
+    #radius-shape-1 {
+      height: 220px;
+      width: 220px;
+      top: -60px;
+      left: -130px;
+      background: radial-gradient(#44006b, #ad1fff);
+      overflow: hidden;
+    }
+
+    #radius-shape-2 {
+      border-radius: 38% 62% 63% 37% / 70% 33% 67% 30%;
+      bottom: -60px;
+      right: -110px;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(#44006b, #ad1fff);
+      overflow: hidden;
+    }
+
+    .bg-glass {
+      background-color: hsla(0, 0%, 100%, 0.9) !important;
+      backdrop-filter: saturate(200%) blur(25px);
+    }
+  </style>
+
+  <div class="container px-4 py-5 px-md-5 text-center text-lg-start my-5">
+    <div class="row gx-lg-5 align-items-center mb-5">
+      <div class="col-lg-6 mb-5 mb-lg-0" style="z-index: 10">
+        <h1 class="my-5 display-5 fw-bold ls-tight" style="color: hsl(218, 81%, 95%)">
+          Sistema de <br />
+          <span style="color: hsl(218, 81%, 75%)">Fluxo Circular</span>
+        </h1>
+        <p class="mb-4 opacity-70" style="color: hsl(218, 81%, 85%)">
+          O sistema é capaz de criar e simular um fluxo circular de renda, com os atores empresa,
+          familia, governo, setor financeiro e setor externo.
+        </p>
+      </div>
+
+      <div class="col-lg-6 mb-5 mb-lg-0 position-relative">
+        <div id="radius-shape-1" class="position-absolute rounded-circle shadow-5-strong"></div>
+        <div id="radius-shape-2" class="position-absolute shadow-5-strong"></div>
+
+        <div class="card bg-glass">
+          <div class="card-body px-4 py-5 px-md-5">
+            <div class="">
+              <form>
+
+                <!-- Submit button -->
+                 <div class="row my-3">
+                    <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary d-flex my-2">
+                      <a href="pages/empresa.php" style="color: inherit; text-decoration: none;">Empresa</a>
+                    </button>
+                    <button type="submit" href="pages/familia.php" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary d-flex my-2">
+                      <a href="pages/familia.php" style="color: inherit; text-decoration: none;">Familia</a>
+                    </button>
+                    <button type="submit" href="pages/governo.php" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary d-flex my-2">
+                      <a href="pages/governo.php" style="color: inherit; text-decoration: none;">Governo</a>
+                    </button>
+                    <button type="submit" href="pages/setorexterno.php" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary d-flex my-2">
+                      <a href="pages/setorfinanceiro.php" style="color: inherit; text-decoration: none;">Setor Financeiro</a>
+                    </button>
+                    <button type="submit" href="pages/setorfinanceiro.php" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary d-flex my-2">
+                      <a href="pages/setorexterno.php" style="color: inherit; text-decoration: none;">Setor Externo</a>
+                    </button>
+                 </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
+</section>
+<!-- Section: Design Block -->
+    </div>
+       
+
 </body>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </html>
